@@ -1,6 +1,7 @@
 //  Melin Ozturk
 //  11/24/2025
-//  General description: a brief summary of what this particular class does.
+//  This code will add the instance variables for the pong game and make sure they run correctly and 
+// in the end we will be able to play the game as it is supposed to be played as.
 
 package com.pong;
 
@@ -19,6 +20,9 @@ public class PongGame extends JPanel implements MouseMotionListener {
     private Ball ball;
     // step 1:  add any other private variables you may need to play the game.
     private SlowDown slow;
+    private Speedup speed;
+    private Wall wall;
+    
     
 
     public PongGame() {
@@ -36,6 +40,9 @@ public class PongGame extends JPanel implements MouseMotionListener {
 
         //create any other objects necessary to play the game.
         slow = new SlowDown(100, 200, 100, 100); //x, y, height, width 
+        speed = new Speedup (100,200,100,100);
+        wall = new Wall (10, 20, 10, 10, Color.WHITE);
+         
 
     }
 
@@ -65,6 +72,9 @@ public class PongGame extends JPanel implements MouseMotionListener {
         
         //call the "draw" function of any visual component you'd like to show up on the screen.
         slow.draw(g);
+        speed.draw(g);
+        wall.draw(g);
+        
     }
 
     // precondition: all required visual components are intialized to non-null
@@ -73,6 +83,12 @@ public class PongGame extends JPanel implements MouseMotionListener {
     public void gameLogic() {
         //add commands here to make the game play propperly
         
+        ball.moveBall();
+        wall.getX();
+        wall.getY();
+        
+
+
         aiPaddle.moveY(ball.getY());
 
         if (aiPaddle.isTouching(ball)) {
