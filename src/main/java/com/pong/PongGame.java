@@ -39,9 +39,9 @@ public class PongGame extends JPanel implements MouseMotionListener {
         ball = new Ball(200, 200, 10, 3, Color.RED, 10);
 
         //create any other objects necessary to play the game.
-        slow = new SlowDown(100, 200, 100, 100); //x, y, height, width  //done
-        speed = new Speedup (100,200,100,100); 
-        wall = new Wall (10, 20, 10, 10, Color.WHITE); //done
+        slow = new SlowDown(1000, 2000, 1000, 1000); //x, y, height, width  //done
+        speed = new Speedup (1000,2000,1000,1000); 
+        wall = new Wall (400, 800, 50, 10, Color.WHITE); //done
          
 
     }
@@ -65,13 +65,15 @@ public class PongGame extends JPanel implements MouseMotionListener {
         g.setColor(Color.BLACK);
         g.fillRect(0, 0, width, height);
 
-        g.setColor(Color.WHITE);
+        g.setColor(Color.BLACK);
         g.drawString("The Score is User:" + playerScore + " vs Ai:" + aiScore, 240, 20);
         ball.draw(g);
         aiPaddle.draw(g);
         
         //call the "draw" function of any visual component you'd like to show up on the screen.
+        
         slow.draw(g); //done
+        
         speed.draw(g);
         wall.draw(g);
         
