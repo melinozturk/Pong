@@ -1,3 +1,7 @@
+//  Melin Ozturk
+//  11/24/2025
+//  General description: a brief summary of what this particular class does.
+
 package com.pong;
 
 import javax.swing.*;
@@ -13,7 +17,9 @@ public class PongGame extends JPanel implements MouseMotionListener {
     private int playerScore;
     private int aiScore;
     private Ball ball;
-    // step 1 add any other private variables you may need to play the game.
+    // step 1:  add any other private variables you may need to play the game.
+    private SlowDown slow;
+    
 
     public PongGame() {
 
@@ -29,6 +35,7 @@ public class PongGame extends JPanel implements MouseMotionListener {
         ball = new Ball(200, 200, 10, 3, Color.RED, 10);
 
         //create any other objects necessary to play the game.
+        slow = new SlowDown(100, 200, 100, 100); //x, y, height, width 
 
     }
 
@@ -57,7 +64,7 @@ public class PongGame extends JPanel implements MouseMotionListener {
         aiPaddle.draw(g);
         
         //call the "draw" function of any visual component you'd like to show up on the screen.
-
+        slow.draw(g);
     }
 
     // precondition: all required visual components are intialized to non-null
