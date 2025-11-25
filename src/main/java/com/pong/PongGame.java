@@ -39,9 +39,9 @@ public class PongGame extends JPanel implements MouseMotionListener {
         ball = new Ball(200, 200, 10, 3, Color.RED, 10);
 
         //create any other objects necessary to play the game.
-        slow = new SlowDown(1000, 2000, 1000, 1000); //x, y, height, width  //done
-        speed = new Speedup (1000,2000,1000,1000); 
-        wall = new Wall (400, 800, 50, 10, Color.WHITE); //done
+        slow = new SlowDown(200, 200, 20, 20); //x, y, height, width  
+        speed = new Speedup (100,100,20,20); 
+        wall = new Wall (400, 800, 50, 10, Color.WHITE); 
          
 
     }
