@@ -19,10 +19,11 @@ public class PongGame extends JPanel implements MouseMotionListener {
     private int aiScore;
     private Ball ball;
     // step 1:  add any other private variables you may need to play the game.
+    
     private SlowDown slow; //done
     private Speedup speed; // done
     private Wall wall; //done
-    
+    private Paddle userPaddle;
     
 
     public PongGame() {
@@ -41,7 +42,8 @@ public class PongGame extends JPanel implements MouseMotionListener {
         //create any other objects necessary to play the game.
         slow = new SlowDown(200, 200, 20, 20); //x, y, height, width  
         speed = new Speedup (100,100,20,20); 
-        wall = new Wall (400, 800, 50, 10, Color.WHITE); 
+        wall = new Wall (400, 800, 50, 10, Color.WHITE);
+        userPaddle = new Paddle(110, 40, 50, 9, Color.WHITE);
          
 
     }
