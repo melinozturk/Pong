@@ -81,4 +81,10 @@ public class Paddle {
 	 }
 		 return false;
 	 }
+
+
+	 public void moveX() {
+		// TODO Auto-generated method stub
+		
+	 }
 }
